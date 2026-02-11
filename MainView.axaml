@@ -1,0 +1,65 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1024" d:DesignHeight="600"
+        Width="1024" Height="600"
+        x:Class="BatchProcess.MainView"
+        xmlns:vm="clr-namespace:BatchProcess.ViewModels"
+        x:DataType="vm:MainViewModel"
+        Title="BatchProcess">
+    
+    <Design.DataContext><vm:MainViewModel></vm:MainViewModel></Design.DataContext>
+    
+    <Grid Background="{DynamicResource PrimaryBackground}" ColumnDefinitions="Auto, *">
+        <Border Padding="20" Background="{DynamicResource PrimaryBackgroundGradient}">
+            <Grid RowDefinitions="*, Auto">
+                <StackPanel Spacing="12">
+                    <Image PointerPressed="InputElement_OnPointerPressed" Source="{SvgImage Assets/Images/logo.svg}" Width="220" IsVisible="{Binding SideMenuExpanded}"></Image>
+                    <Image PointerPressed="InputElement_OnPointerPressed" Source="{SvgImage Assets/Images/icon.svg}" Width="22" IsVisible="{Binding !SideMenuExpanded}"></Image>
+                    
+                    <Button HorizontalAlignment="Stretch">
+                        <StackPanel Orientation="Horizontal">
+                            <Label Classes="Icon" Content="&#xE2C2;"></Label>
+                            <Label FontFamily="{DynamicResource AkkoPro}" Content="Home" IsVisible="{Binding SideMenuExpanded}"></Label>
+                        </StackPanel>
+                    </Button>
+                    <Button HorizontalAlignment="Stretch">
+                        <StackPanel Orientation="Horizontal">
+                            <Label Classes="Icon" Content="&#xE346;"></Label>
+                            <Label FontFamily="{DynamicResource AkkoPro}" Content="Process" IsVisible="{Binding SideMenuExpanded}"></Label>
+                        </StackPanel>
+                    </Button>
+                    <Button HorizontalAlignment="Stretch">
+                        <StackPanel Orientation="Horizontal">
+                            <Label Classes="Icon" Content="&#xE7F2;"></Label>
+                            <Label FontFamily="{DynamicResource AkkoPro}" Content="Actions" IsVisible="{Binding SideMenuExpanded}"></Label>
+                        </StackPanel>
+                    </Button>
+                    <Button HorizontalAlignment="Stretch">
+                        <StackPanel Orientation="Horizontal">
+                            <Label Classes="Icon" Content="&#xE3EE;"></Label>
+                            <Label FontFamily="{DynamicResource AkkoPro}" Content="Marcos" IsVisible="{Binding SideMenuExpanded}"></Label>
+                        </StackPanel>
+                    </Button>
+                    <Button HorizontalAlignment="Stretch">
+                        <StackPanel Orientation="Horizontal">
+                            <Label Classes="Icon" Content="&#xEB7A;"></Label>
+                            <Label FontFamily="{DynamicResource AkkoPro}" Content="Reporter" IsVisible="{Binding SideMenuExpanded}"></Label>
+                        </StackPanel>
+                    </Button>
+                    <Button HorizontalAlignment="Stretch">
+                        <StackPanel Orientation="Horizontal">
+                            <Label Classes="Icon" Content="&#xE03A;"></Label>
+                            <Label FontFamily="{DynamicResource AkkoPro}" Content="History" IsVisible="{Binding SideMenuExpanded}"></Label>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+                
+                <Button Grid.Row="1">
+                    <Label Classes="Icon" Content="&#xE272;"></Label>
+                </Button>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
