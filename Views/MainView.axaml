@@ -34,25 +34,25 @@
                             <Label FontFamily="{DynamicResource AkkoPro}" Content="Process" IsVisible="{Binding SideMenuExpanded}"></Label>
                         </StackPanel>
                     </Button>
-                    <Button HorizontalAlignment="Stretch">
+                    <Button HorizontalAlignment="Stretch" Classes.active="{Binding ActionsPageIsActive}" Command="{Binding NavigateToActionsCommand}">
                         <StackPanel Orientation="Horizontal">
                             <Label Classes="Icon" Content="&#xE7F2;"></Label>
                             <Label FontFamily="{DynamicResource AkkoPro}" Content="Actions" IsVisible="{Binding SideMenuExpanded}"></Label>
                         </StackPanel>
                     </Button>
-                    <Button HorizontalAlignment="Stretch">
+                    <Button HorizontalAlignment="Stretch" Classes.active="{Binding MarcosPageIsActive}" Command="{Binding NavigateToMarcosCommand}">
                         <StackPanel Orientation="Horizontal">
                             <Label Classes="Icon" Content="&#xE3EE;"></Label>
                             <Label FontFamily="{DynamicResource AkkoPro}" Content="Marcos" IsVisible="{Binding SideMenuExpanded}"></Label>
                         </StackPanel>
                     </Button>
-                    <Button HorizontalAlignment="Stretch">
+                    <Button HorizontalAlignment="Stretch" Classes.active="{Binding ReporterPageIsActive}" Command="{Binding NavigateToReporterCommand}">
                         <StackPanel Orientation="Horizontal">
                             <Label Classes="Icon" Content="&#xEB7A;"></Label>
                             <Label FontFamily="{DynamicResource AkkoPro}" Content="Reporter" IsVisible="{Binding SideMenuExpanded}"></Label>
                         </StackPanel>
                     </Button>
-                    <Button HorizontalAlignment="Stretch">
+                    <Button HorizontalAlignment="Stretch" Classes.active="{Binding HistoryPageIsActive}" Command="{Binding NavigateToHistoryCommand}">
                         <StackPanel Orientation="Horizontal">
                             <Label Classes="Icon" Content="&#xE03A;"></Label>
                             <Label FontFamily="{DynamicResource AkkoPro}" Content="History" IsVisible="{Binding SideMenuExpanded}"></Label>
@@ -60,7 +60,7 @@
                     </Button>
                 </StackPanel>
                 
-                <Button Grid.Row="1">
+                <Button Grid.Row="1" Classes.active="{Binding SettingsPageIsActive}" Command="{Binding NavigateToSettingsCommand}">
                     <Label Classes="Icon" Content="&#xE272;"></Label>
                 </Button>
             </Grid>
