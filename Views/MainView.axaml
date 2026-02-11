@@ -6,25 +6,29 @@
         Width="1024" Height="600"
         x:Class="BatchProcess.MainView"
         xmlns:vm="clr-namespace:BatchProcess.ViewModels"
+        xmlns:view="clr-namespace:BatchProcess.Views"
         x:DataType="vm:MainViewModel"
         Title="BatchProcess">
     
     <Design.DataContext><vm:MainViewModel></vm:MainViewModel></Design.DataContext>
     
     <Grid Background="{DynamicResource PrimaryBackground}" ColumnDefinitions="Auto, *">
+
+        <ContentControl Grid.Column="1" Content="{Binding CurrentPage}"></ContentControl>
+
         <Border Padding="20" Background="{DynamicResource PrimaryBackgroundGradient}">
             <Grid RowDefinitions="*, Auto">
                 <StackPanel Spacing="12">
-                    <Image PointerPressed="InputElement_OnPointerPressed" Source="{SvgImage Assets/Images/logo.svg}" Width="220" IsVisible="{Binding SideMenuExpanded}"></Image>
-                    <Image PointerPressed="InputElement_OnPointerPressed" Source="{SvgImage Assets/Images/icon.svg}" Width="22" IsVisible="{Binding !SideMenuExpanded}"></Image>
+                    <Image PointerPressed="InputElement_OnPointerPressed" Source="{SvgImage /Assets/Images/logo.svg}" Width="220" IsVisible="{Binding SideMenuExpanded}"></Image>
+                    <Image PointerPressed="InputElement_OnPointerPressed" Source="{SvgImage /Assets/Images/icon.svg}" Width="22" IsVisible="{Binding !SideMenuExpanded}"></Image>
                     
-                    <Button HorizontalAlignment="Stretch">
+                    <Button HorizontalAlignment="Stretch" Classes.active="{Binding HomePageIsActive}" Command="{Binding NavigateToHomeCommand}">
                         <StackPanel Orientation="Horizontal">
                             <Label Classes="Icon" Content="&#xE2C2;"></Label>
                             <Label FontFamily="{DynamicResource AkkoPro}" Content="Home" IsVisible="{Binding SideMenuExpanded}"></Label>
                         </StackPanel>
                     </Button>
-                    <Button HorizontalAlignment="Stretch">
+                    <Button HorizontalAlignment="Stretch" Classes.active="{Binding ProcessPageIsActive}" Command="{Binding NavigateToProcessCommand}">
                         <StackPanel Orientation="Horizontal">
                             <Label Classes="Icon" Content="&#xE346;"></Label>
                             <Label FontFamily="{DynamicResource AkkoPro}" Content="Process" IsVisible="{Binding SideMenuExpanded}"></Label>
