@@ -23,11 +23,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Assets\Images\" />
-    </ItemGroup>
-
-    <ItemGroup>
+      <None Remove="Assets\Images\background-settings.svg" />
       <None Remove="Assets\Images\logo.svg" />
+      <AvaloniaResource Include="Assets\Images\background-settings.svg" />
       <AvaloniaResource Include="Assets\Images\logo.svg" />
       <None Remove="Assets\Fonts\AkkoPro-Bold.ttf" />
       <AvaloniaResource Include="Assets\Fonts\AkkoPro-Bold.ttf" />
